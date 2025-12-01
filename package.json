@@ -1,0 +1,14 @@
+{
+  "name": "gta-serverless",
+  "version": "1.0.0",
+  "description": "3D Multiplayer Game Serverless Backend",
+  "main": "api/socket/index.js",
+  "scripts": {
+    "start": "node api/socket/index.js"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "cors": "^2.8.5"
+  }
+}
