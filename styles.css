@@ -1,0 +1,128 @@
+body { margin: 0; overflow: hidden; background-color: #333; font-family: 'Inter', sans-serif; }
+canvas#gameCanvas { display: block; }
+
+#ui-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows mouse interaction with the 3D scene */
+}
+
+/* Stats Panel */
+#stats-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    pointer-events: auto;
+    font-size: 0.9em;
+}
+#ping-display { margin-bottom: 5px; }
+#health-bar-container {
+    width: 150px;
+    height: 15px;
+    background: #555;
+    border-radius: 4px;
+    overflow: hidden;
+}
+#health-bar-fill {
+    height: 100%;
+    width: 100%; /* Default width */
+    background: linear-gradient(to right, #4CAF50, #FF9800, #F44336);
+    transition: width 0.3s ease;
+}
+
+/* Minimap */
+#minimap-canvas {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 3px solid #6272A4;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Chat Window */
+#chat-window {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 300px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    pointer-events: auto;
+}
+#chat-messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 0.85em;
+    color: white;
+}
+#chat-input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #444;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Player Name Tag (outside UI container, rendered in Three.js overlay) */
+.name-tag {
+    position: absolute;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 5px;
+    border-radius: 4px;
+    transform: translate(-50%, -100%);
+    font-size: 0.7em;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Mission Panel */
+#mission-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(2, 2, 2, 0.95);
+    color: #FFDE00;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 222, 0, 0.5);
+    width: 400px;
+    max-width: 90vw;
+    pointer-events: auto;
+}
+#mission-panel.hidden { display: none; }
+#mission-title { font-size: 1.5em; margin-bottom: 10px; }
+#mission-description { margin-bottom: 20px; color: #EEE; }
+#mission-accept {
+    padding: 10px 20px;
+    background: #00BFFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+#mission-accept:hover { background: #009ACD; }
